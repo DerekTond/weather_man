@@ -1,4 +1,7 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 # 爬虫
+
 import requests
 import bs4
 import pymysql
@@ -77,7 +80,6 @@ if __name__ == '__main__':
     for info in weather_dict.items():
         print(info)
     weather = Weather(**weather_dict)
-
 
 # 导入mysql
 # db = pymysql.connect(host="localhost",

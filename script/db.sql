@@ -1,4 +1,4 @@
-create table weather_data.weather_data2 (
+create table weather_data (
   id int not null auto_increment comment '主键',
   name varchar(80) COLLATE utf8_bin null default '' comment '地区',
   time datetime not null default CURRENT_TIMESTAMP comment '时间',
