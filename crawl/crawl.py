@@ -88,3 +88,32 @@ if __name__ == '__main__':
 #                      db='weather_data',
 #                      charset='utf8mb4',
 #                      cursorclass=pymysql.cursors.DictCursor )
+
+
+# 插入数据
+# (weather['name'],weather['time'],weather['climate'],weather['max_temp'],weather['min_temp'],
+#           weather['humidity'],weather['wind'],weather['rays'],weather['pm'])
+# with db.cursor() as cursor:
+#     sql = '''INSERT INTO `weather_data2`(`name`,`time`,`weather`,`max_temp`,`min_temp`,`cur_temp`,`humidity`,`wind_dir`,`wind_power`,`rays`,`pm`)
+#            VALUES (%s, %s,%s, %s, %s, %s, %s, %s, %s, %s, %s)'''
+#     cursor.execute(sql, (
+#     str(weather_dict['name']), weather_dict['time'], str(weather_dict['weather']), weather_dict['max_temp'],
+#     weather_dict['min_temp'],
+#     weather_dict['cur_temp'], weather_dict['humidity'], weather_dict['wind_dir'], weather_dict['wind_power'],
+#     weather_dict['rays'], weather_dict['pm']))
+#
+# db.commit()
+
+
+#从db中取出数据
+# try:
+#     with db.cursor() as cursor:
+#         sql = "SELECT * FROM `weather_data2`"
+#         cursor.execute(sql)
+#         #只取出一条结果
+#         result=cursor.fetchone()
+#         print(result)
+#
+#
+# finally:
+#     db.close()
