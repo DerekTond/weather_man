@@ -81,6 +81,8 @@ if __name__ == '__main__':
         print(info)
     weather = Weather(**weather_dict)
 
+
+
 # 导入mysql
 # db = pymysql.connect(host="localhost",
 #                      user="root",
