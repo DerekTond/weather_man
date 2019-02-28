@@ -13,25 +13,28 @@
 ### 3 数据库
 工具：mysql
 数据库
-序号|编码|列名
-:--:|:--:|:--:|:--:
-1|id|主键|int
-2|name|地区|str
-3|time|时间|datetime
-4|weather|天气|int
-5|max_temp|最高气温|int
-6|min_temp|最低气温|int
-7|cur_temp|当前气温|int
-8|humidity|当前湿度|int
-9|wind_dir|风向|str
-10|wind_power|风力|int
-11|rays|紫外线|int
-12|pm|pm值|int
+
+序号|编码|列名|格式  
+-| :--: |:--: | :--:  
+1 |id | 主键 |int  
+2 | name | 地区 | str  
+3|time|时间|datetime  
+4|weather|天气|int  
+5|max_temp|最高气温|int  
+6|min_temp|最低气温|int  
+7|cur_temp|当前气温|int  
+8|humidity|当前湿度|int  
+9|wind_dir|风向|str  
+10|wind_power|风力|int  
+11|rays|紫外线|int  
+12|pm|pm值|int  
+
 
 ### 4 线下预测模型
 1. 回归分析，预测明日天气
-  预测温度？预测雾霾？
+  使用线性回归及XGBT预测温度，在weather_notebook下对雾霾来源进行了初步分析
 ### 5 预测及可视化
-1. 温度同比、环比？
-2. 雾霾同比环比？
+1. 推测雾霾来源分为三块：工业生产、农业生产、车辆尾气；
+2、16年后由于煤改气，可见SO2明显减少，说明散煤使用减少；
+3、使用了pyecharts的地图可视化，对雾霾来源也进行了一定分析。
 

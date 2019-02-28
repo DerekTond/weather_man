@@ -10,7 +10,6 @@ class DataBase:
         self.charset = charset
         self.cursorclass = pymysql.cursors.DictCursor
         self.query_temp = "SELECT {} FROM {} ORDER  BY `time` DESC LIMIT {}"
-
         self.insert_temp = "INSERT INTO `{}`({}) VALUES ({})"
 
     def insert(self, table, row_dic):
@@ -29,7 +28,8 @@ class DataBase:
                 cursor.execute(pre_statement, tuple(row_dic.values()))
                 db.commit()
                 return True
-            except:
+            except Exception as e:
+                print(e)
                 db.rollback()
                 return False
             finally:
@@ -62,5 +62,8 @@ if __name__ == '__main__':
 
     today_weather = DataBase("localhost","root","q1889233",'weather_data')
     out = today_weather.query(col_names=['*'], table='weather_data2', limit=3)
+    new_row = out[0]
+    new_row.pop('id')
+    today_weather.insert(table='weather_data2', row_dic=new_row)
     print(out)
 
